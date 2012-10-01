@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FirstCode</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="The Chopping Block, Inc." />
+	<meta name="geo.country" content="US" />
+	<meta name="dc.language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />	
+	
+	<style type="text/css" media="screen">		
+		/*local styles if any (quick tests and local only overrides)*/
+		#noun{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="wrap" >
+		Project: FirstCode
+		<ul>
+			<li>Display the prompt</li>
+			<li>Take the value from the prompt and display on the screen</li>
+			<li>Make 2 prompts, add the strings together and display them on the page</li>
+			<li>Make a madlibs
+				Ask the user for noun
+				Ask the user for a verb
+				Ask the user for an adjective
+				Place those entries into a sentence that has been prewritten
+				Display that on the screen
+				
+				</li> 
+			<li>Display 1 more prompt that asks the user for a number between 1 and 3
+				Depending on the number, show different stories
+				For this, you'll need a conditional (well, a few)
+				</li> <!-- / -->	
+				
+		</ul>
+		<p id="display_name"></p>
+		
+		<p id="madlibs_result_one">You ate a <span id="noun_one"></span>. It was <span id="adjective_one"></span>. Now, you are going to <span id="verb_one"></span>.</p>		
+
+		<p id="madlibs_result_two">You ate a <span id="noun_two"></span>. It was <span id="adjective_two"></span>. Now, you are going to <span id="verb_two"></span>.</p>		
+		<p id="madlibs_result_three">You ate a <span id="noun_three"></span>. It was <span id="adjective_three"></span>. Now, you are going to <span id="verb_three"></span>.</p>		
+		
+	</div>
+	<!-- Parts 1 and 2 -->
+	<!-- <script type="text/javascript" charset="utf-8">
+		//Prompt - takes description text as argument
+		//Take the value that the user enters in the prompt
+		//and assigns that value to the variable name
+		var name = prompt("Enter your name.");
+		
+		//Take the variable name and display its contents on the screen
+		//document.getElementById() takes a string as an argument, 
+		//which represents an id on the page
+		//https://developer.mozilla.org/en-US/docs/DOM/document.getElementById
+		var element = document.getElementById('display_name');
+		
+		//innerHTML represents all of the HTML and text inside the open and close tags
+		//of an element.
+		//We can retrieve the value by calling innerHTML
+		//Or we can assign a new value to it, with the = 
+		//This overwrites everything inside the <p> tag
+		//element.innerHTML = name;
+		
+		//If we wanted to append to the text inside the <p> tag
+		//First get the value of the innerHTML and add it (stick it together with) the value of name
+		element.innerHTML = element.innerHTML + " " + name;
+		
+	</script> -->
+	
+	<!-- Part 3 -->
+	<!-- <script type="text/javascript" charset="utf-8">
+		//Prompt - takes description text as argument
+		//Take the value that the user enters in the prompt
+		//and assigns that value to the variable first_name
+		//Display a second prompt and assign that value to last_name
+		var first_name = prompt("Enter your first name.");
+		var last_name = prompt("Enter your last name.");		
+		
+		//Take the variable name and display its contents on the screen
+		//document.getElementById() takes a string as an argument, 
+		//which represents an id on the page
+		//https://developer.mozilla.org/en-US/docs/DOM/document.getElementById
+		var element = document.getElementById('display_name');
+		
+		//If we wanted to append to the text inside the <p> tag
+		//First get the value of the innerHTML and add it (stick it together with) the value of name
+		element.innerHTML = first_name + " " + last_name;
+		
+	</script> -->
+	
+	<!-- Part 4 (Option A) -->
+	<!-- <script type="text/javascript" charset="utf-8">
+		//Prompt - takes description text as argument
+		var noun = prompt("Enter a noun");
+		var adjective = prompt("Enter an adjective");		
+		var verb = prompt("Enter a verb");		
+		
+		//Take the variable name and display its contents on the screen
+		//document.getElementById() takes a string as an argument, 
+		//which represents an id on the page
+		//https://developer.mozilla.org/en-US/docs/DOM/document.getElementById
+		var element = document.getElementById('display_name');
+		
+		//If we wanted to append to the text inside the <p> tag
+		//First get the value of the innerHTML and add it (stick it together with) the value of name
+		element.innerHTML = "You ate a " + noun + ". It was " + adjective + ". Now, you are going to " + verb;
+		
+	</script> -->
+	
+	<!-- Part 4 (Option B) -->
+	<!-- <script type="text/javascript" charset="utf-8">
+		//Prompt - takes description text as argument
+		var noun = prompt("Enter a noun");
+		var adjective = prompt("Enter an adjective");		
+		var verb = prompt("Enter a verb");		
+		
+		//Take the variable name and display its contents on the screen
+		//document.getElementById() takes a string as an argument, 
+		//which represents an id on the page
+		//https://developer.mozilla.org/en-US/docs/DOM/document.getElementById
+		var noun_span = document.getElementById('noun');
+		var adjective_span = document.getElementById('adjective');
+		var verb_span = document.getElementById('verb');				
+		
+		noun_span.innerHTML = noun;
+		adjective_span.innerHTML = adjective;
+		verb_span.innerHTML = verb;
+	</script>	 -->
+	
+	<!-- Part 5 -->
+	<!-- <script type="text/javascript" charset="utf-8">
+		//Prompt - takes description text as argument
+		var choice = prompt("Choose a number between 1 and 3");
+		var noun = prompt("Enter a noun");
+		var adjective = prompt("Enter an adjective");		
+		var verb = prompt("Enter a verb");		
+		
+		//Take the variable name and display its contents on the screen
+		//document.getElementById() takes a string as an argument, 
+		//which represents an id on the page
+		//https://developer.mozilla.org/en-US/docs/DOM/document.getElementById
+		var element = document.getElementById('display_name');
+		
+		//Figure out what number the user chose.
+		//We're just matching string, not numbers
+		if(choice == "1"){
+			//Here, we know they chose 1
+			element.innerHTML = "You ate a " + noun + ". It was " + adjective + ". Now, you are going to " + verb;			
+		}else{
+			if(choice == "2"){
+				//Here, we know they chose 2
+				element.innerHTML = "You dropped a " + noun + ". It wasn't " + adjective + ". Now, you are going to " + verb;				
+			}else{
+				//Here, we know they chose 3 OR they wrote something else entirely, and
+				//we're just pretend it was 3
+				element.innerHTML = "You kicked a " + noun + ". It was " + adjective + ". Now, you are going to " + verb;				
+			}
+			
+		}
+
+		
+	</script> -->
+	
+	<!-- Part 5 (Option B) -->
+	<!-- <script type="text/javascript" charset="utf-8">
+		//Prompt - takes description text as argument
+		var choice = prompt("Choose a number between 1 and 3");
+		var noun = prompt("Enter a noun");
+		var adjective = prompt("Enter an adjective");		
+		var verb = prompt("Enter a verb");		
+		
+		//Take the variable name and display its contents on the screen
+		//document.getElementById() takes a string as an argument, 
+		//which represents an id on the page
+		//https://developer.mozilla.org/en-US/docs/DOM/document.getElementById
+		var element = document.getElementById('display_name');
+		
+		//Figure out what number the user chose.
+		//We're just matching string, not numbers
+		if(choice == "1"){
+			//Here, we know they chose 1
+				var noun_span = document.getElementById('noun_one');
+				var adjective_span = document.getElementById('adjective_one');
+				var verb_span = document.getElementById('verb_one');				
+
+				noun_span.innerHTML = noun;
+				adjective_span.innerHTML = adjective;
+				verb_span.innerHTML = verb;
+				
+				document.getElementById('madlibs_result_two').innerHTML = "";				
+
+		}else{
+			if(choice == "2"){
+				//Here, we know they chose 2
+					
+			}else{
+				//Here, we know they chose 3 OR they wrote something else entirely, and
+				//we're just pretend it was 3
+		
+			}
+			
+		}
+
+		
+	</script> -->
+	
+	
+	<!-- Part 5 (Option C)-->
+	<!-- <script type="text/javascript" charset="utf-8">
+		//Prompt - takes description text as argument
+		var choice = prompt("Choose a number between 1 and 3");
+		var noun = prompt("Enter a noun");
+		var adjective = prompt("Enter an adjective");		
+		var verb = prompt("Enter a verb");		
+		
+		//Take the variable name and display its contents on the screen
+		//document.getElementById() takes a string as an argument, 
+		//which represents an id on the page
+		//https://developer.mozilla.org/en-US/docs/DOM/document.getElementById
+		var element = document.getElementById('display_name');
+		
+		//Figure out what number the user chose.
+		//We're just matching string, not numbers
+		if(choice == "1"){
+			//Here, we know they chose 1
+			element.innerHTML = "You ate a " + noun + ". It was " + adjective + ". Now, you are going to " + verb;			
+		}
+		
+		if(choice == "2"){
+				//Here, we know they chose 2
+				element.innerHTML = "You dropped a " + noun + ". It wasn't " + adjective + ". Now, you are going to " + verb;				
+		}
+		
+		if(choice == "3"){
+			//Here, we know they chose 3 OR they wrote something else entirely, and
+			//we're just pretend it was 3
+			element.innerHTML = "You kicked a " + noun + ". It was " + adjective + ". Now, you are going to " + verb;				
+		
+			
+		}
+
+		
+	</script> -->	
+	
+	Part 5 (Option D)
+	<script type="text/javascript" charset="utf-8">
+		//Prompt - takes description text as argument
+		var choice = prompt("Choose a number between 1 and 3");
+		var noun = prompt("Enter a noun");
+		var adjective = prompt("Enter an adjective");		
+		var verb = prompt("Enter a verb");		
+		
+		//Take the variable name and display its contents on the screen
+		//document.getElementById() takes a string as an argument, 
+		//which represents an id on the page
+		//https://developer.mozilla.org/en-US/docs/DOM/document.getElementById
+		var element = document.getElementById('display_name');
+		
+		//Figure out what number the user chose.
+		//We're just matching string, not numbers
+		if(choice == "1"){
+			//Here, we know they chose 1
+			element.innerHTML = "You ate a " + noun + ". It was " + adjective + ". Now, you are going to " + verb;			
+		}else if(choice == "2"){
+				//Here, we know they chose 2
+				element.innerHTML = "You dropped a " + noun + ". It wasn't " + adjective + ". Now, you are going to " + verb;				
+		}else if(choice == "3"){
+				//Here, we know they chose 3 OR they wrote something else entirely, and
+				//we're just pretend it was 3
+				element.innerHTML = "You kicked a " + noun + ". It was " + adjective + ". Now, you are going to " + verb;				
+		}else{
+			element.innerHTML = "Please choose a number between 1 and 3";
+		}
+
+		
+	</script>	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
