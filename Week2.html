@@ -22,7 +22,7 @@
 
 	<div class="wrap" >
 		<h1>Project: Choose your weapon</h1>
-		<img id="image_1" src="http://placehold.it/100x100">
+		<button id="rock"><img id="image_1" src="http://placehold.it/100x100"></button>
 		<img id="image_2" src="http://placehold.it/100x100">
 		<img id="image_3" src="http://placehold.it/100x100">
 	</div>
@@ -31,36 +31,45 @@
 		
 		var image = document.getElementById('image_1');
 		image.src = "images/1rock.jpg";
+		
 		var image = document.getElementById('image_2');
 		image.src = "images/2paper.jpg";
+		
 		var image = document.getElementById('image_3');
 		image.src = "images/3scissors.jpg";
+		
+		
+		
+	//	image_1.onclick = function(e){
+		//	screen_field.value = operation(first_number, parseInt(screen_field.value));
+			
+		//}
 		
 		//Boolean logic
 		// && means AND
 		// Both sides of the equation have to be true
  		
-		if(computer == "rock" && user == "paper"){
-			console.log("User won")
+		//if(computer == "rock" && user == "paper"){
+		//	console.log("User won")
 			
-		}
+		//}
 
 		// || means OR
 		// One or the other side must be true, or both are true
 
 		 
-		if(computer == "rock" || user == "paper"){
-			console.log("User won")
+		//if(computer == "rock" || user == "paper"){
+		//	console.log("User won")
 
-		}
+	//	}
 		
 		
 		// returns a random number between the two limits provided 
 		// Returns a Random Number min <= results < max
-		function randomRange(min, max)
-		{
-			return (Math.floor((Math.random()*(max-min)) + min)); 
-		}
+		//function randomRange(min, max)
+		//{
+		//	return (Math.floor((Math.random()*(max-min)) + min)); 
+	//	}
 		
 
 	</script>
