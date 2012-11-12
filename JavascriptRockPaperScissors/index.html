@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavascriptRockPaperScissors</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="The Chopping Block, Inc." />
+	<meta name="geo.country" content="US" />
+	<meta name="dc.language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<style type="text/css" media="screen">		
+		/*local styles if any (quick tests and local only overrides)*/
+		
+		.displaynone{
+			display: none;
+		}
+		
+		.selected{
+			border: 2px solid black;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="wrap" >
+		Project: JavascriptRockPaperScissors
+		<p><br></p>
+		<div id="weapons">
+			<img id="rock" src="images/rock.png" width="100" height="100" alt="Rock">
+			<img id="paper" src="images/paper.png" width="100" height="100" alt="Paper">
+			<img id="scissors" src="images/scissors.png" width="100" height="100" alt="Scissors">
+		</div>
+		<img id="computerweapon" >
+		<p id="winner"></p>
+		
+	</div>
+	<script type="text/javascript" charset="utf-8">
+	
+		var selected;
+	
+		document.getElementById("rock").onclick = function(e){
+			selected = "rock";
+			console.log('selected is: '+selected);
+			computerChoice(selected);
+			
+		}
+		
+		document.getElementById("paper").onclick = function(e){
+			selected = "paper";
+			console.log('selected is: '+selected);
+			computerChoice(selected);
+			
+		}
+		
+		document.getElementById("scissors").onclick = function(e){
+			selected = "scissors";
+			console.log('selected is: '+selected);
+			computerChoice(selected);
+			
+		}
+
+
+		function computerChoice(user_choice){
+			var computer = randomRange(0,3);
+			var computer_image = document.getElementById("computerweapon");
+
+			if(computer == 0){
+				computer_image.src = "images/rock.png"
+
+			}else if(computer == 1){
+				computer_image.src = "images/paper.png"
+
+			}else{
+				computer_image.src = "images/scissors.png"
+			}if(user_choice == "rock" && computer == 1){
+				document.getElementById("winner").innerHTML = "You won, yay!";
+				
+			}else if(user_choice == "paper" && computer == 2){
+				document.getElementById("winner").innerHTML = "You won, yay!";
+				
+			}else if(user_choice == "scissors" && computer == 0){
+				document.getElementById("winner").innerHTML = "You won, yay!";
+				
+			}else{
+				if(user_choice == "rock" && computer == 0){
+					document.getElementById("winner").innerHTML = "Draw, dangit!";
+					
+				}else if(user_choice == "paper" && computer == 1){
+					document.getElementById("winner").innerHTML = "Draw, dangit!";
+					
+				}else if(user_choice == "scissors" && computer == 2){
+					document.getElementById("winner").innerHTML = "Draw, dangit!";
+					
+				}else{
+					document.getElementById("winner").innerHTML = "Computer wins, boo!";
+					
+				}
+			}
+			
+		}
+		
+		
+		function randomRange(min, max)
+		{
+			return (Math.floor((Math.random()*(max-min)) + min));
+		}
+		
+		
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
