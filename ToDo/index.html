@@ -29,10 +29,8 @@
 		<div>
 			Task Entry:
 			<input type="text" name="task_entry" value="" id="task_entry"><br>
-			<ol>   
-				<li>Make an html list (kinda like this one)</li>
-				<li>Put in dummy copy for now</li>
-				<li>Use querySelectorAll and a loop so that when you click on a li to toggles between a completed and non-completed state</li>										         
+			<ol id="task_list">   
+				<li>Sample item</li>										         
 			</ol>                 
 			                      
 		</div>
@@ -51,6 +49,7 @@
 			if(e.keyCode == 13){
 				console.log("Enter Key pressed");
 				console.log(entry_field.val());
+				$("<li></li>").text(entry_field.val()).appendTo($("#task_list")).click(complete);
 			}
 		});
 
